@@ -548,7 +548,7 @@ def train_and_validate_lstm_baseline(settings):
 
     lr = settings['lr']
     hidden_size = settings['hidden_size']
-    num_layers = settings['num_layers']
+    num_layers = settings['num_layers_lstm']
 
     lstm = LSTM1(len(c.cols), hidden_size, num_layers)
     lstm.cuda()
@@ -608,7 +608,7 @@ def objective_lstm_baseline(trial):
     settings = {
         'lr' : trial.suggest_float('lr', 0.0001, 0.01),
         'hidden_size' : trial.suggest_int('hidden_size', 5, 500),
-        'num_layers' : trial.suggest_int('num_layers_lstm', 1, 5),
+        'num_layers_lstm' : trial.suggest_int('num_layers_lstm', 1, 5),
         'window_size': trial.suggest_categorical('window_size', [12, 48, 96, 192])
     }
     return train_and_validate_lstm_baseline(settings)[1]
