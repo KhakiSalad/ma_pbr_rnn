@@ -1,14 +1,19 @@
-# ma_pbr_rnn
-Code für die Experimente der MA.
+# Forecasting Algae Growth in Photo-Bioreactors using Attention LSTMs
 
-Transformer in transformer/ von https://github.com/KasperGroesLudvigsen/influenza_transformer
+This repository contain the code for the experiments of the paper:
+Forecasting Algae Growth in Photo-Bioreactors using Attention LSTMs
 
-IMV-LSTm in networks.py von https://github.com/KurochkinAlexey/IMV_LSTM
 
+Transformer in transformer/ from [https://github.com/KasperGroesLudvigsen/influenza_transformer](https://github.com/KasperGroesLudvigsen/influenza_transformer).
+
+IMV-LSTM in networks.py from [https://github.com/KurochkinAlexey/IMV_LSTM](https://github.com/KurochkinAlexey/IMV_LSTM).
+
+
+# Dependencies and Execution
 python version 3.10.6
 
-# abstract
-Modeling of phototrophic microalgeal growth in bioreactors is often achieved by using mechanistic models for growth kinetics and complex models for radiation transport and liquid dynamics in the reactor. While these models offer good predictive performance and further understanding of underlying biological and physical processes, their construction and evaluation require comprehensive domain knowledge. Additionally models have to be adapted to fit the specific bioreactor, or get increasingly complex for more general cases. This leads to increasing computational requirements. 
-    
-In this thesis rnn-based models for time series prediction are examined for the task of growth prediction for the cultivation of Chlorella Vulgaris in an Industrial Plankton Bioreactor. These models have been shown to exhibit good prediction performance in many applications and novel additions offer improved interpretability. Therefore these models promise to offer an easy to use alternative to sophiosticated mechanistic models while still providing insight into the growth mechanics. 
+conda create -n algae-env --file package-list.txt
 
+Cuda is required.
+
+To run the code execute: python main.py
